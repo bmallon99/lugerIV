@@ -6,12 +6,14 @@ using UnityEngine.PlayerLoop;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D _rb;
+    private Object _bullet;
     private float _moveVelocity;
     private float _jumpForce;
     private bool _hasJump;
     void Start()
     {
         _rb = (Rigidbody2D) GetComponent<Rigidbody2D>();
+        _bullet = Resources.Load("Bullet");
         _moveVelocity = 5;
         _jumpForce = 500;
         _hasJump = true;
@@ -26,7 +28,9 @@ public class Player : MonoBehaviour
         // Shooting: spacebar 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // TODO: Implement Shoot   
+            GameObject b = Instantiate(_bullet, new Vector2(_rb.position.x + 0.5f, _rb.position.y), new Quaternion()) as GameObject;
+            var comp = b.GetComponent<Rigidbody2D>();
+            comp.velocity = new Vector2(6f, 0f);
         }
     }
 
