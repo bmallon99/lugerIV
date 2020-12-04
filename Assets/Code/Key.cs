@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnlockDoor : MonoBehaviour
+public class Key : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            NextLevel.Unlock();
+            var nl = FindObjectOfType<NextLevel>();
+            nl.Unlock();
             Destroy(gameObject);
         }
     }

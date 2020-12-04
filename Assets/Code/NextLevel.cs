@@ -7,14 +7,16 @@ using System;
 public class NextLevel : MonoBehaviour
 {
     private int levelNum;
-    private static bool isLocked = false;
-
+    private bool isLocked = false;
+    public Sprite unlockedDoor;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         var name = SceneManager.GetActiveScene().name;
         levelNum = Int32.Parse(name.Substring(name.Length - 1));
-        if (levelNum != 0)
+        if (levelNum != 0 && levelNum != 3)
         {
             isLocked = true;
         }
@@ -26,9 +28,11 @@ public class NextLevel : MonoBehaviour
         
     }
 
-    public static void Unlock()
+    public void Unlock()
     {
         isLocked = false;
+        var sr = GetComponent<SpriteRenderer>();
+        sr.sprite = unlockedDoor;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

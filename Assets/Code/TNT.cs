@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenDoor : MonoBehaviour
+public class TNT : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,14 +15,14 @@ public class OpenDoor : MonoBehaviour
     {
         
     }
-
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Box")
+        if (other.gameObject.tag == "Bullet")
         {
-            var sr = GetComponent<SpriteRenderer>();
-            sr.color = Color.green;
-            NextLevel.Unlock(); 
+            Destroy(gameObject);
+            var wbu = FindObjectOfType<WallBlowUp>();
+            wbu.BlowUp();
         }
     }
 }

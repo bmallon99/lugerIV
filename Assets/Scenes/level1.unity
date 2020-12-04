@@ -630,7 +630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1330641786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bda48b79ade91584199a6d6760aafd06, type: 3}
+  m_Script: {fileID: 11500000, guid: 71b6c23f6d3e26a42a8e3b673403d19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &1330641789
@@ -999,6 +999,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6719717347180903178, guid: 08ddcfd2d766447669f29507cff0d2c9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c19b1f7f4bde64f48b7306f1bcde18f7,
+        type: 3}
     - target: {fileID: 6719717347180903179, guid: 08ddcfd2d766447669f29507cff0d2c9,
         type: 3}
       propertyPath: m_LocalPosition.x
