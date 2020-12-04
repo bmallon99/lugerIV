@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BossEdge : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static bool boots = false;
+   
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class BossEdge : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && boots)
         {
             var b = FindObjectOfType<Boss>();
             b.makeB();

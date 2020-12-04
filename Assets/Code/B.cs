@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class B : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,12 +17,13 @@ public class B : MonoBehaviour
         
     }
     
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            //Win();
-            Debug.Log("you're winner");
+            var ds = FindObjectOfType<DoorSound>();
+            ds.BNoise();
+            SpeedrunClock.counting = false;
         }
     }
 }

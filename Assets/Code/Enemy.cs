@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     private bool _hasJump;
     private float _coolDown;
     private bool _isJumping;
-    
     void Start()
     {
         _jumpForce = 500f;
@@ -54,6 +53,8 @@ public class Enemy : MonoBehaviour
 
         if (other.gameObject.tag == "Bullet")
         {
+            var p = FindObjectOfType<Player>();
+            p.EnemyDies();
             Instantiate(_key, _rb.position, new Quaternion());
             Destroy(gameObject);
         }
