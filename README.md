@@ -1,4 +1,4 @@
-# lugerIV
+# LugerIV
 
 ### About the game
 1. You are Mr. Luger
@@ -19,3 +19,4 @@
   - In the last room, defeat the "boss"
   - Try to get the fastest time!
 
+[Walkthrough](./walkthrough.md)
